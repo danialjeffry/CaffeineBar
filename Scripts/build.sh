@@ -9,13 +9,16 @@ CONTENTS="${DEST}/Contents"
 MACOS="${CONTENTS}/MacOS"
 
 rm -rf "$DEST"
-mkdir -p "$MACOS"
+mkdir -p "$MACOS" "${CONTENTS}/Resources"
 
 echo "Compiling..."
 swiftc -O -target arm64-apple-macosx14.0 \
   -parse-as-library \
   Sources/${APP_NAME}App.swift Sources/AppDelegate.swift Sources/CaffeineModel.swift Sources/MenuBarView.swift \
   -o "${MACOS}/${APP_NAME}"
+
+echo "Copying icon..."
+cp Icons/AppIcon.icns "${CONTENTS}/Resources/AppIcon.icns"
 
 cat > "${CONTENTS}/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
@@ -42,6 +45,8 @@ cat > "${CONTENTS}/Info.plist" <<'PLIST'
     <true/>
     <key>NSHighResolutionCapable</key>
     <true/>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
 </dict>
 </plist>
 PLIST

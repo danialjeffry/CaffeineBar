@@ -1,8 +1,8 @@
-# CaffeineBar ☕
+# StayAwake
 
 A tiny macOS menu bar app that keeps your Mac awake with a single click.
 
-CaffeineBar sits in the top-right of your screen (menu bar) as a coffee cup icon.
+StayAwake sits in the top-right of your screen (menu bar) as a coffee cup icon.
 Click it to open a small panel where you can **enable** or **disable** keep-awake with
 one button, or pick a **preset timer** so your Mac automatically falls back to
 normal sleep when you're done.
@@ -14,7 +14,7 @@ system stay awake reliably — no fake mouse movement involved.
 
 ## Features
 
-- **☕ Menu bar icon** — lives in the top-right of your screen, no Dock icon.
+- **Menu bar icon** — lives in the top-right of your screen, no Dock icon.
 - **Enable / Disable toggle** — one button turns keep-awake on or off.
 - **Preset timers** — 30m / 60m / 90m buttons for meetings and sessions.
 - **Custom timer** — enter any number of minutes and Start.
@@ -36,22 +36,22 @@ system stay awake reliably — no fake mouse movement involved.
 
 ## Install (pre-built app)
 
-1. Extract `CaffeineBar.app` from the zip and drag it into your **Applications** folder.
+1. Extract `StayAwake.app` from the zip and drag it into your **Applications** folder.
 2. First launch: because the app is ad-hoc signed (not from the App Store), macOS may
    warn that the developer can't be verified. **Right-click** (or Ctrl-click) the app →
    **Open** → **Open** again. This is only needed once.
-3. (Optional) To auto-start at login: **System Settings → General → Login Items** → add `CaffeineBar`.
+3. (Optional) To auto-start at login: **System Settings → General → Login Items** → add `StayAwake`.
 
 ---
 
 ## Build from source
 
 ```bash
-cd CaffeineBar
+cd StayAwake
 ./Scripts/build.sh
 ```
 
-This compiles the Swift sources and outputs `CaffeineBar.app` in the project root.
+This compiles the Swift sources and outputs `StayAwake.app` in the project root.
 
 ---
 
@@ -67,14 +67,14 @@ This compiles the Swift sources and outputs `CaffeineBar.app` in the project roo
 ## Project structure
 
 ```
-CaffeineBar/
+StayAwake/
 ├── Sources/             # Swift source files
-│   ├── CaffeineBarApp.swift   # App entry point
-│   ├── AppDelegate.swift      # Menu bar item, popover & caffeinate logic
-│   ├── CaffeineModel.swift    # Observable state for the UI
-│   └── MenuBarView.swift      # SwiftUI control panel
+│   ├── StayAwakeApp.swift   # App entry point
+│   ├── AppDelegate.swift    # Menu bar item, popover & caffeinate logic
+│   ├── CaffeineModel.swift  # Observable state for the UI
+│   └── MenuBarView.swift    # SwiftUI control panel
 ├── Scripts/
-│   └── build.sh               # Build script (produces CaffeineBar.app)
+│   └── build.sh               # Build script (produces StayAwake.app)
 ├── .gitignore
 └── README.md
 ```

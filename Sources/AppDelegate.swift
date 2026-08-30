@@ -15,7 +15,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         if let button = statusItem.button {
-            button.image = NSImage(systemSymbolName: "cup.and.saucer.fill", accessibilityDescription: "Caffeine On")
+            button.image = NSImage(systemSymbolName: "cup.and.saucer.fill", accessibilityDescription: "StayAwake On")
             button.imagePosition = .imageLeading
             button.target = self
         }
@@ -96,17 +96,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             }
             model.isActive = true
             model.timerText = timerText
-            button.image = NSImage(systemSymbolName: "cup.and.saucer.fill", accessibilityDescription: "Caffeine On")
+            button.image = NSImage(systemSymbolName: "cup.and.saucer.fill", accessibilityDescription: "StayAwake On")
             button.image?.isTemplate = false
             let tinted = button.image?.tinted(with: .systemYellow)
             button.image = tinted
-            button.toolTip = "Caffeine active"
+            button.toolTip = "StayAwake active"
         } else {
             statusItem.button?.title = ""
             model.isActive = false
             model.timerText = ""
-            button.image = NSImage(systemSymbolName: "cup.and.saucer", accessibilityDescription: "Caffeine Off")
-            button.toolTip = "Caffeine inactive"
+            button.image = NSImage(systemSymbolName: "cup.and.saucer", accessibilityDescription: "StayAwake Off")
+            button.toolTip = "StayAwake inactive"
         }
     }
 

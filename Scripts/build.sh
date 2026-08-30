@@ -3,7 +3,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
-APP_NAME="CaffeineBar"
+APP_NAME="StayAwake"
 DEST="${APP_NAME}.app"
 CONTENTS="${DEST}/Contents"
 MACOS="${CONTENTS}/MacOS"
@@ -23,11 +23,11 @@ cat > "${CONTENTS}/Info.plist" <<'PLIST'
 <plist version="1.0">
 <dict>
     <key>CFBundleName</key>
-    <string>CaffeineBar</string>
+    <string>StayAwake</string>
     <key>CFBundleDisplayName</key>
-    <string>CaffeineBar</string>
+    <string>StayAwake</string>
     <key>CFBundleIdentifier</key>
-    <string>com.local.CaffeineBar</string>
+    <string>com.local.StayAwake</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
     <key>CFBundleShortVersionString</key>
@@ -35,7 +35,7 @@ cat > "${CONTENTS}/Info.plist" <<'PLIST'
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleExecutable</key>
-    <string>CaffeineBar</string>
+    <string>StayAwake</string>
     <key>LSMinimumSystemVersion</key>
     <string>14.0</string>
     <key>LSUIElement</key>

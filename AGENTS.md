@@ -5,7 +5,7 @@ For human-facing docs see [README.md](./README.md).
 
 ## What this is
 
-**CaffeineBar** — a tiny macOS menu bar app that keeps your Mac awake on demand
+**StayAwake** — a tiny macOS menu bar app that keeps your Mac awake on demand
 with preset/custom timers. Full product docs: [README.md](./README.md).
 
 - Language: Swift (SwiftUI + AppKit)
@@ -17,12 +17,12 @@ with preset/custom timers. Full product docs: [README.md](./README.md).
 
 ```
 Sources/
-  CaffeineBarApp.swift # @main App entry point
-  AppDelegate.swift    # Status item, popover, caffeinate launch/stop, countdown
-  CaffeineModel.swift  # Observable state for the UI
-  MenuBarView.swift    # SwiftUI control panel (toggle, presets, custom timer)
+  StayAwakeApp.swift  # @main App entry point
+  AppDelegate.swift   # Status item, popover, caffeinate launch/stop, countdown
+  CaffeineModel.swift # Observable state for the UI
+  MenuBarView.swift   # SwiftUI control panel (toggle, presets, custom timer)
 Scripts/
-  build.sh             # Builds CaffeineBar.app (compile + plist + codesign)
+  build.sh            # Builds StayAwake.app (compile + plist + codesign)
 ```
 
 ## Build
@@ -33,7 +33,7 @@ Requires Xcode Command Line Tools (arm64 Mac):
 ./Scripts/build.sh
 ```
 
-- Output: `CaffeineBar.app` in the repo root.
+- Output: `StayAwake.app` in the repo root.
 - Runs `swiftc` with `-target arm64-apple-macosx14.0 -parse-as-library` over the
   4 source files in `Sources/`, writes an `Info.plist`, then ad-hoc codesigns.
 
@@ -43,11 +43,11 @@ No Xcode project, no SPM/CocoaPods deps, no tests, no app icon asset.
 
 Downloaders use the prebuilt app from a GitHub Release:
 
-1. Unzip `CaffeineBar.zip` → `CaffeineBar.app`, move to `/Applications`.
+1. Unzip `StayAwake.zip` → `StayAwake.app`, move to `/Applications`.
 2. First launch is **ad-hoc signed**, so macOS shows an "unverified developer"
    warning; the app still works (right-click → Open → Open once).
 
-To run for development after building: `open CaffeineBar.app`.
+To run for development after building: `open StayAwake.app`.
 
 ## How it works (key facts)
 
